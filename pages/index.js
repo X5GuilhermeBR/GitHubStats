@@ -1,15 +1,16 @@
 import React from 'react'
 import NavBar from '../components/NavBar/index'
+import SearchBar from '../components/SearchBar/index'
 import Main from './styles'
-import { Container } from '@material-ui/core'
 
 const Home = () => {
     return (
-        <Main>
-            <Container maxWidth="lg">
+        <div>
+            <Main>
                 <NavBar />
-            </Container>
-        </Main>
+                <SearchBar />
+            </Main>
+        </div>
     )
 }
 
