@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../components/NavBar/index'
-import { Main } from './styles'
+import Main from './styles'
 import { Container } from '@material-ui/core'
 
 const Home = () => {
