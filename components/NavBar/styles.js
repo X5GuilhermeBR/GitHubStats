@@ -4,7 +4,7 @@ export const Menu = styled.div`
     ul {
         list-style-type: none;
         overflow: hidden;
-        background-color: #212528;
+        background-color: #222831;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
     }
