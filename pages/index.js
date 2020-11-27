@@ -6,7 +6,7 @@ import { Container } from '@material-ui/core'
 const Home = () => {
     return (
         <Main>
-            <Container maxWidth="sm">
+            <Container maxWidth="lg">
                 <NavBar />
             </Container>
         </Main>
