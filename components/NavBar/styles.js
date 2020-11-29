@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Button as NewButton } from '@material-ui/core'
 
 export const Menu = styled.div`
     ul {
@@ -7,6 +8,8 @@ export const Menu = styled.div`
         background-color: #222831;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
+        display: flex;
+        justify-content: space-between;
     }
 
     li {
@@ -22,6 +25,18 @@ export const Menu = styled.div`
 
         &:hover {
             background-color: #111;
+        }
+    }
+`
+
+export const Button = styled(NewButton)`
+    &.navButton {
+        color: #E8E8E8;
+        text-transform: none;
+        padding: 4px 8px;
+        font-size: 16px;
+        &:hover {
+            background-color: #2F3846
         }
     }
 `

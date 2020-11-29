@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Input as NewInput } from '@material-ui/core'
+import { Input as NewInput, Button as NewButton } from '@material-ui/core'
 import { MdPerson as CustomMdPerson } from 'react-icons/md'
 import { IoSearchSharp as CustomIoSearchSharp } from 'react-icons/io5'
 
@@ -32,6 +32,20 @@ export const Input = styled(NewInput)`
     width: 42%;
 `
 
+export const Button = styled(NewButton)`
+    &.search-icon {
+        border: none;
+        background-color: whitesmoke;
+        border-radius: 0px 10px 10px 0px;
+        max-height: 55px;
+        max-width: 55px;
+        padding: 10px;
+        &:hover {
+            background-color: #b4b4b4;
+        }
+    }
+`
+
 export const MdPerson = styled(CustomMdPerson)`
     color: #b4b4b4;
     background-color: whitesmoke;
@@ -43,7 +57,7 @@ export const MdPerson = styled(CustomMdPerson)`
 
 export const IoSearchSharp = styled(CustomIoSearchSharp)`
     background-color: transparent;
-    color: #30475e;
+    color: #f05454;
     width: 25px;
     height: 50px;
 `

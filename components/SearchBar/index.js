@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Div, MdPerson, IoSearchSharp } from './styles'
+import { Input, Button, Div, MdPerson, IoSearchSharp } from './styles'
 
 const SearchBar = () => {
     return (
@@ -9,9 +9,9 @@ const SearchBar = () => {
                 placeholder="Search a user..."
                 disableUnderline={true}
             ></Input>
-            <button>
+            <Button className="search-icon">
                 <IoSearchSharp />
-            </button>
+            </Button>
         </Div>
     )
 }
