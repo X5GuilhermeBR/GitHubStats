@@ -1,5 +1,6 @@
 import React from 'react'
-import { Menu } from './styles'
+import { Menu, Button } from './styles'
+
 const NavBar = () => {
     return (
         <div>
@@ -7,6 +8,9 @@ const NavBar = () => {
                 <ul>
                     <li>
                         <a>GitHub Stats</a>
+                    </li>
+                    <li>
+                        <Button className="navButton">Sobre</Button>
                     </li>
                 </ul>
             </Menu>
