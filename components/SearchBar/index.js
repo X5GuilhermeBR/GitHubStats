@@ -9,7 +9,7 @@ const SearchBar = () => {
                 placeholder="Search a user..."
                 disableUnderline={true}
             ></Input>
-            <Button className="search-icon">
+            <Button className="search-button">
                 <IoSearchSharp />
             </Button>
         </Div>

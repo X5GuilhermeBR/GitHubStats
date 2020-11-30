@@ -10,9 +10,7 @@ const NavBar = () => {
                         <a>GitHub Stats</a>
                     </li>
                     <li>
-                        <Button className="navButton">
-                            About
-                        </Button>
+                        <Button className="navButton">Sobre</Button>
                     </li>
                 </ul>
             </Menu>

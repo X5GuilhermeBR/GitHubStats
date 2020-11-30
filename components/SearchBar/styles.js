@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Input as NewInput, Button as NewButton } from '@material-ui/core'
+import { Input as NewInput } from '@material-ui/core'
+import { Button as NewButton } from '@material-ui/core'
 import { MdPerson as CustomMdPerson } from 'react-icons/md'
 import { IoSearchSharp as CustomIoSearchSharp } from 'react-icons/io5'
 
@@ -13,16 +14,6 @@ export const Div = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
-    button {
-        border: none;
-        background-color: whitesmoke;
-        border-radius: 0px 10px 10px 0px;
-
-        &:hover {
-            background-color: red;
-        }
-    }
 `
 
 export const Input = styled(NewInput)`
@@ -33,15 +24,16 @@ export const Input = styled(NewInput)`
 `
 
 export const Button = styled(NewButton)`
-    &.search-icon {
+    &.search-button {
         border: none;
         background-color: whitesmoke;
         border-radius: 0px 10px 10px 0px;
         max-height: 55px;
         max-width: 55px;
         padding: 10px;
+
         &:hover {
-            background-color: #b4b4b4;
+            background-color: grey;
         }
     }
 `
