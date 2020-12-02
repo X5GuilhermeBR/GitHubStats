@@ -2,14 +2,14 @@ import styled from 'styled-components'
 import { Button as NewButton } from '@material-ui/core'
 
 export const Menu = styled.div`
+    margin: 30px 0 30px 0;
+    
     ul {
-        list-style-type: none;
-        overflow: hidden;
-        background-color: #222831;
-        font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
+        list-style-type: none;
         display: flex;
         justify-content: space-between;
+        overflow: hidden;
     }
 
     li {
@@ -17,29 +17,27 @@ export const Menu = styled.div`
     }
 
     li a {
-        display: block;
+        padding: 14px 16px;
         color: white;
         text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+        display: block;
 
         &:hover {
-            background-color: #2f3846;
+            background-color: var(--hover);
         }
     }
 `
 
 export const Button = styled(NewButton)`
     &.navButton {
-        color: white;
-        text-transform: none;
         padding: 4px 8px;
         margin-right: 20px;
         font-size: 16px;
-        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-transform: none;
 
         &:hover {
-            background-color: #2f3846;
+            background-color: var(--hover);
         }
     }
 `

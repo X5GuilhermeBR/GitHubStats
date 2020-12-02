@@ -1,13 +1,9 @@
 import styled from 'styled-components'
+import Container from '@material-ui/core/Container'
 
-const Main = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 11;
-    background-color: #222831;
-    width: 100%;
-    height: 100%;
+const Main = styled(Container)`
+  position: relative;
+  z-index: 1;
 `
 
 export default Main

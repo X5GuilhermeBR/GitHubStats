@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1478.951" height="646.395" viewBox="0 0 1478.951 646.395">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #323945;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #323945;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.952" x2="0.499" y2="-0.191" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5f6c81" stop-opacity="0"/>
+      <stop offset="1" stop-color="#161a20"/>
+    </linearGradient>
+  </defs>
+  <g id="bg-graph" transform="translate(-58.621 -216.84)">
+    <path id="Caminho_9" data-name="Caminho 9" class="cls-1" d="M579,985.669s13.908-194.706,122.85-175.39c108.294,19.193,95.808,117.442,151.438,105.08s60.158-144.933,81.9-302.877c18.868-137.052,93.985-95.082,107.985-50.886,11.775,37.056,16.411,153.648,61.224,161.375s60.266-80.355,63.357-123.623S1186.3,379.916,1242.7,377.6c53.313-2.194,76.492,76.492,76.492,226.385s6.181,247.246,30.906,287.424,57.176,29.361,67.22,23.952c12.5-6.737,50.222-70.311,59.494-227.93s71.083-134.44,84.991-111.261,51.767,150.666,98.126,147.575,59.494-33.224,67.22-104.307,19.177-247.092,78.037-244.928c60.977,2.241,85.485,280.656,84.45,364.349-1.313,105.59,77.805,230.588,127.254,230.588" transform="translate(-498.791 -140.607)"/>
+    <circle id="Elipse_3" data-name="Elipse 3" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(330.546 753.89)"/>
+    <circle id="Elipse_4" data-name="Elipse 4" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(58.621 823.057)"/>
+    <circle id="Elipse_5" data-name="Elipse 5" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(597.881 559.184)"/>
+    <circle id="Elipse_6" data-name="Elipse 6" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(474.351 359.996)"/>
+    <circle id="Elipse_7" data-name="Elipse 7" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(731.07 219.019)"/>
+    <circle id="Elipse_8" data-name="Elipse 8" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(1016.655 403.109)"/>
+    <circle id="Elipse_9" data-name="Elipse 9" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(1153.877 562.614)"/>
+    <circle id="Elipse_10" data-name="Elipse 10" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(1282.738 216.84)"/>
+    <circle id="Elipse_11" data-name="Elipse 11" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(1497.395 810.417)"/>
+    <circle id="Elipse_12" data-name="Elipse 12" class="cls-2" cx="20.089" cy="20.089" r="20.089" transform="translate(876.034 755.435)"/>
+  </g>
+</svg>

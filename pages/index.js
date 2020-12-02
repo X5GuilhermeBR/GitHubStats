@@ -1,37 +1,88 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import HeadHtml from '../components/Head/index'
 import NavBar from '../components/NavBar/index'
 import SearchBar from '../components/SearchBar/index'
 import UserProfileCard from '../components/UserProfileCard'
+
+import {
+    searchUsersGithub,
+    setLocalStorageUsersItems,
+    getLocalStorageUsersItems,
+} from '../services/api'
+
 import Main from './styles'
 
 const Home = () => {
-  return (
-    <div>
-      <Main>
-        <NavBar />
-        <SearchBar />
+    const [username, setUsername] = useState(false)
+    const [profiles, setProfiles] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [auth, setAuth] = useState(false)
+    const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
 
-        <UserProfileCard
-          name="Rafael Paes"
-          username="@paesrafael"
-          photo="https://avatars3.githubusercontent.com/u/46358065?s=110"
-          followers="100 seguidores"
-          repositories="50 repositórios"
-          stars="20 stars"
-          titleColor="#000000"
-          userColor="#9B9B9B"
-          statsColor="#000000"
-          cardBackground="#EFEFEF"
-          cardBoxShadow="3px 3px 6px rgba(0, 0, 0, 0.2)"
-          cardDisplay="flex"
-          imageBorderRadius="12px 0 0 12px"
-          statsDisplay="flex"
-          iconColor="#000000"
-          iconBlock="show"
-        />
-      </Main>
-    </div>
-  )
+    useEffect(() => {
+        getLocalStorageUsersItems().then(function (items) {
+            if (items !== null) {
+                setProfiles(items)
+                setLoading(true)
+            }
+        })
+    }, [])
+
+    const updateInputValue = (evt) => {
+        setUsername(evt.target.value)
+    }
+
+    const searchUser = async (evt, username) => {
+        evt.preventDefault()
+        console.log(userToken)
+
+        const authStr = 'Bearer '.concat(userToken)
+        setAuth(authStr)
+
+        const { data } = await searchUsersGithub({ username, authStr })
+        const { items } = data
+
+        setProfiles(items)
+        setLocalStorageUsersItems(items)
+
+        if (items) {
+            setLoading(true)
+        }
+    }
+
+    return (
+        <Main maxWidth="md">
+            <HeadHtml />
+
+            <NavBar />
+
+            <SearchBar
+                handleClick={(evt) => searchUser(evt, username)}
+                updateInputValue={(evt) => updateInputValue(evt)}
+                username={username}
+            />
+
+            {!!loading &&
+                !!profiles &&
+                profiles.map((item) => (
+                    <UserProfileCard
+                        key={item.id}
+                        login={item.login}
+                        titleColor="#000000"
+                        userColor="#9B9B9B"
+                        statsColor="#000000"
+                        cardBackground="#EFEFEF"
+                        cardBoxShadow="3px 3px 6px rgba(0, 0, 0, 0.2)"
+                        cardDisplay="flex"
+                        imageBorderRadius="12px 0 0 12px"
+                        statsDisplay="flex"
+                        iconColor="#000000"
+                        iconBlock="show"
+                    />
+                ))}
+        </Main>
+    )
 }
 
 export default Home
