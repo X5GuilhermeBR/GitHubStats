@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Container from '@material-ui/core/Container'
 import {
   FaHeart,
   FaFolder,
@@ -13,7 +14,6 @@ import {
 } from '../../services/api'
 
 import {
-  Container,
   Card,
   Image,
   UserInformation,
@@ -96,7 +96,7 @@ export default function UserProfileCard({ ...props }) {
   }, [username])
 
   return (
-    <Container>
+    <Container maxWidth="md">
       {!!username && (
         <Card
           background={cardBackground}
@@ -141,9 +141,9 @@ export default function UserProfileCard({ ...props }) {
           </UserInformation>
 
           <IconBlock show={iconBlock}>
-            <FaGithubSquare size={40} color="#24292E" />
+            <FaGithubSquare size={40} color="var(--icon)" />
 
-            <FaPoll size={40} color="#F05454" />
+            <FaPoll size={40} color="var(--icon-search)" />
           </IconBlock>
         </Card>
       )}
