@@ -1,13 +1,8 @@
 import styled from 'styled-components'
 
-const Main = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 11;
-    background-color: #222831;
+const Main = styled.section`
     width: 100%;
-    height: 100%;
+    display: block;
 `
 
 export default Main
