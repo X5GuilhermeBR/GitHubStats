@@ -1,20 +1,20 @@
 import styled from 'styled-components'
-import { Input as NewInput } from '@material-ui/core'
-import { Button as NewButton } from '@material-ui/core'
+import {
+    Input as NewInput,
+    Button as NewButton,
+} from '@material-ui/core'
 import { MdPerson as CustomMdPerson } from 'react-icons/md'
 import { IoSearchSharp as CustomIoSearchSharp } from 'react-icons/io5'
 
 export const Div = styled.div`
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 `
 
 export const Input = styled(NewInput)`
     padding: 10px;
-    width: 42%;
+    width: 100%;
     height: 55px;
     background-color: var(--white);
 `

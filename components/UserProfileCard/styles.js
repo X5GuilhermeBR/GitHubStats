@@ -32,8 +32,12 @@ const keyframes = css`
   }
 `
 
-const Card = styled.div`
+const Container = styled.div`
   margin-top: 30px;
+  display: block;
+`
+
+const Card = styled.div`
   border-radius: 12px;
   background-color: ${(props) => (props.background ? props.background : 'transparent')};
   box-shadow: ${(props) => (props.boxShadow ? props.boxShadow : 'none')};
@@ -136,6 +140,7 @@ const IconBlock = styled.div`
 `
 
 export {
+  Container,
   Card,
   Image,
   UserInformation,

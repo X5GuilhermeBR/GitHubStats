@@ -47,38 +47,38 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <Main maxWidth="md">
             <HeadHtml />
-            <Main>
-                <NavBar />
-                <SearchBar
-                    handleClick={(evt) => searchUser(evt, username)}
-                    updateInputValue={(evt) => updateInputValue(evt)}
-                    username={username}
-                />
 
-                {!!loading && (
-                    !!profiles && (
-                        profiles.map((item) => (
-                            <UserProfileCard
-                                key={item.id}
-                                login={item.login}
-                                titleColor="#000000"
-                                userColor="#9B9B9B"
-                                statsColor="#000000"
-                                cardBackground="#EFEFEF"
-                                cardBoxShadow="3px 3px 6px rgba(0, 0, 0, 0.2)"
-                                cardDisplay="flex"
-                                imageBorderRadius="12px 0 0 12px"
-                                statsDisplay="flex"
-                                iconColor="#000000"
-                                iconBlock="show"
-                            />
-                        ))
-                    )
-                )}
-            </Main>
-        </div>
+            <NavBar />
+
+            <SearchBar
+                handleClick={(evt) => searchUser(evt, username)}
+                updateInputValue={(evt) => updateInputValue(evt)}
+                username={username}
+            />
+
+            {!!loading && (
+                !!profiles && (
+                    profiles.map((item) => (
+                        <UserProfileCard
+                            key={item.id}
+                            login={item.login}
+                            titleColor="#000000"
+                            userColor="#9B9B9B"
+                            statsColor="#000000"
+                            cardBackground="#EFEFEF"
+                            cardBoxShadow="3px 3px 6px rgba(0, 0, 0, 0.2)"
+                            cardDisplay="flex"
+                            imageBorderRadius="12px 0 0 12px"
+                            statsDisplay="flex"
+                            iconColor="#000000"
+                            iconBlock="show"
+                        />
+                    ))
+                )
+            )}
+        </Main>
     )
 }
 

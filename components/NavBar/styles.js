@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import { Button as NewButton } from '@material-ui/core'
 
 export const Menu = styled.div`
-    padding: 20px;
-    margin-bottom: 30px;
+    margin: 30px 0 30px 0;
     
     ul {
         font-size: 16px;

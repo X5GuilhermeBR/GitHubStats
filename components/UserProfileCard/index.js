@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Container from '@material-ui/core/Container'
 import {
   FaHeart,
   FaFolder,
@@ -14,6 +13,7 @@ import {
 } from '../../services/api'
 
 import {
+  Container,
   Card,
   Image,
   UserInformation,
@@ -96,7 +96,7 @@ export default function UserProfileCard({ ...props }) {
   }, [username])
 
   return (
-    <Container maxWidth="md">
+    <Container>
       {!!username && (
         <Card
           background={cardBackground}
