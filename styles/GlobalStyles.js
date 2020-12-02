@@ -43,7 +43,7 @@ export default createGlobalStyle`
       bottom: 0;
       width: 100%;
       height: 100%;
-      background: url('/images/background.svg') no-repeat center;
+      background: url('/images/background.svg') no-repeat center bottom;
     }
   }
   

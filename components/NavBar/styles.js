@@ -7,7 +7,6 @@ export const Menu = styled.div`
     ul {
         font-size: 16px;
         list-style-type: none;
-        background-color: var(--background);
         display: flex;
         justify-content: space-between;
         overflow: hidden;
