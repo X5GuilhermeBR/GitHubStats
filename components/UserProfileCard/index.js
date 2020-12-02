@@ -141,9 +141,9 @@ export default function UserProfileCard({ ...props }) {
           </UserInformation>
 
           <IconBlock show={iconBlock}>
-            <FaGithubSquare size={40} color="#24292E" />
+            <FaGithubSquare size={40} color="var(--icon)" />
 
-            <FaPoll size={40} color="#F05454" />
+            <FaPoll size={40} color="var(--icon-search)" />
           </IconBlock>
         </Card>
       )}
