@@ -17,27 +17,32 @@ const Home = () => {
     const [username, setUsername] = useState(false)
     const [profiles, setProfiles] = useState([])
     const [loading, setLoading] = useState(false)
+    const [auth, setAuth] = useState(false)
+    const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
 
     useEffect(() => {
-        getLocalStorageUsersItems()
-        .then(function(items) {
+        getLocalStorageUsersItems().then(function (items) {
             if (items !== null) {
                 setProfiles(items)
                 setLoading(true)
             }
         })
     }, [])
-    
+
     const updateInputValue = (evt) => {
         setUsername(evt.target.value)
     }
 
     const searchUser = async (evt, username) => {
         evt.preventDefault()
-        
-        const { data } = await searchUsersGithub(username)
+        console.log(userToken)
+
+        const authStr = 'Bearer '.concat(userToken)
+        setAuth(authStr)
+
+        const { data } = await searchUsersGithub({ username, authStr })
         const { items } = data
-        
+
         setProfiles(items)
         setLocalStorageUsersItems(items)
 
@@ -47,38 +52,36 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <Main maxWidth="md">
             <HeadHtml />
-            <Main>
-                <NavBar />
-                <SearchBar
-                    handleClick={(evt) => searchUser(evt, username)}
-                    updateInputValue={(evt) => updateInputValue(evt)}
-                    username={username}
-                />
 
-                {!!loading && (
-                    !!profiles && (
-                        profiles.map((item) => (
-                            <UserProfileCard
-                                key={item.id}
-                                login={item.login}
-                                titleColor="#000000"
-                                userColor="#9B9B9B"
-                                statsColor="#000000"
-                                cardBackground="#EFEFEF"
-                                cardBoxShadow="3px 3px 6px rgba(0, 0, 0, 0.2)"
-                                cardDisplay="flex"
-                                imageBorderRadius="12px 0 0 12px"
-                                statsDisplay="flex"
-                                iconColor="#000000"
-                                iconBlock="show"
-                            />
-                        ))
-                    )
-                )}
-            </Main>
-        </div>
+            <NavBar />
+
+            <SearchBar
+                handleClick={(evt) => searchUser(evt, username)}
+                updateInputValue={(evt) => updateInputValue(evt)}
+                username={username}
+            />
+
+            {!!loading &&
+                !!profiles &&
+                profiles.map((item) => (
+                    <UserProfileCard
+                        key={item.id}
+                        login={item.login}
+                        titleColor="#000000"
+                        userColor="#9B9B9B"
+                        statsColor="#000000"
+                        cardBackground="#EFEFEF"
+                        cardBoxShadow="3px 3px 6px rgba(0, 0, 0, 0.2)"
+                        cardDisplay="flex"
+                        imageBorderRadius="12px 0 0 12px"
+                        statsDisplay="flex"
+                        iconColor="#000000"
+                        iconBlock="show"
+                    />
+                ))}
+        </Main>
     )
 }
 
