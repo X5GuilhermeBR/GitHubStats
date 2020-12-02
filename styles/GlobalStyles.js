@@ -28,8 +28,23 @@ export default createGlobalStyle`
     max-width: 100vw;
     max-height: 100vw;
     width: 100%;
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background: var(--background);
+  }
+
+  body {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/images/background.svg') no-repeat center;
+    }
   }
   
   *,
