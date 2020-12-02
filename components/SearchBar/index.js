@@ -1,14 +1,22 @@
 import React from 'react'
-import { Input, Button, Div, MdPerson, IoSearchSharp } from './styles'
+import {
+    Input,
+    Button,
+    Div,
+    MdPerson,
+    IoSearchSharp,
+} from './styles'
 
 const SearchBar = ({ handleClick, username, updateInputValue }) => (
     <Div>
         <MdPerson />
+
         <Input
             placeholder="Search a user..."
             disableUnderline={true}
             onChange={(evt) => updateInputValue(evt)}
-        ></Input>
+        />
+
         <Button
             className="search-button"
             onClick={(evt) => handleClick(evt, username)}

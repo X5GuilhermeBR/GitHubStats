@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import GlobalStyle from './styles/global';
-import Routes from './routes/index';
-import AppProvider from './hooks';
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+
+import Routes from './routes/index'
+import AppProvider from './hooks'
 
 const App = () => (
   <>
@@ -11,6 +11,7 @@ const App = () => (
         <Routes />
       </BrowserRouter>
     </AppProvider>
-    <GlobalStyle />
   </>
-);
+)
+
+export default App
