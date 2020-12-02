@@ -7,21 +7,23 @@ import {
     IoSearchSharp,
 } from './styles'
 
-const SearchBar = () => {
-    return (
-        <Div>
-            <MdPerson />
-            
-            <Input
-                placeholder="Search a user..."
-                disableUnderline={true}
-            />
-            
-            <Button className="search-button">
-                <IoSearchSharp />
-            </Button>
-        </Div>
-    )
-}
+const SearchBar = ({ handleClick, username, updateInputValue }) => (
+    <Div>
+        <MdPerson />
+
+        <Input
+            placeholder="Search a user..."
+            disableUnderline={true}
+            onChange={(evt) => updateInputValue(evt)}
+        />
+        
+        <Button
+            className="search-button"
+            onClick={(evt) => handleClick(evt, username)}
+        >
+            <IoSearchSharp />
+        </Button>
+    </Div>
+)
 
 export default SearchBar
