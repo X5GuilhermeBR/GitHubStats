@@ -16,7 +16,7 @@ const SearchBar = ({ handleClick, username, updateInputValue }) => (
             disableUnderline={true}
             onChange={(evt) => updateInputValue(evt)}
         />
-        
+
         <Button
             className="search-button"
             onClick={(evt) => handleClick(evt, username)}
