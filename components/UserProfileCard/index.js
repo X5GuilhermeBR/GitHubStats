@@ -30,8 +30,6 @@ export default function UserProfileCard({ ...props }) {
     const [followers, setFollowers] = useState('')
     const [repositories, setRepositories] = useState('')
     const [stars, setStars] = useState('')
-    const [auth, setAuth] = useState(false)
-    const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
 
     const {
         login,
@@ -54,13 +52,8 @@ export default function UserProfileCard({ ...props }) {
 
     useEffect(() => {
         if (username) {
-            const authStr = 'Bearer '.concat(userToken)
-            setAuth(authStr)
             async function searchUserInformations() {
-                const response = await getUserInformations({
-                    username,
-                    authStr,
-                })
+                const response = await getUserInformations(username)
                 const {
                     name,
                     avatar_url,
@@ -85,7 +78,7 @@ export default function UserProfileCard({ ...props }) {
             searchUserInformations()
 
             async function searchUserStars() {
-                const { data } = await getUserStars({ username, authStr })
+                const { data } = await getUserStars(username)
                 const length = data.length
 
                 if (length > 1) {

@@ -1,12 +1,18 @@
 import axios from 'axios'
 
+const authStr = 'Bearer '.concat(process.env.NEXT_PUBLIC_TOKEN_GIT)
+
+axios.defaults.headers.common = {
+    Authorization: authStr,
+}
+
 export const USERS = 'Users'
 
 export const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_ENDPOINT_BASE,
 })
 
-export const searchUsersGithub = async ({ username, authStr }) => {
+export const searchUsersGithub = async (username) => {
     console.log(authStr)
     return await api.get(
         `/search/users?q=${username}&type=Users&per_page=100`,
@@ -14,13 +20,13 @@ export const searchUsersGithub = async ({ username, authStr }) => {
     )
 }
 
-export const getUserInformations = async ({ username, authStr }) => {
+export const getUserInformations = async (username) => {
     return await api.get(`/users/${username}`, {
         headers: { Authorization: authStr },
     })
 }
 
-export const getUserStars = async ({ username, authStr }) => {
+export const getUserStars = async (username) => {
     return await api.get(`/users/${username}/starred?per_page=100`, {
         headers: { Authorization: authStr },
     })

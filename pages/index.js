@@ -17,8 +17,6 @@ const Home = () => {
     const [username, setUsername] = useState(false)
     const [profiles, setProfiles] = useState([])
     const [loading, setLoading] = useState(false)
-    const [auth, setAuth] = useState(false)
-    const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
 
     useEffect(() => {
         getLocalStorageUsersItems().then(function (items) {
@@ -35,12 +33,8 @@ const Home = () => {
 
     const searchUser = async (evt, username) => {
         evt.preventDefault()
-        console.log(userToken)
 
-        const authStr = 'Bearer '.concat(userToken)
-        setAuth(authStr)
-
-        const { data } = await searchUsersGithub({ username, authStr })
+        const { data } = await searchUsersGithub(username)
         const { items } = data
 
         setProfiles(items)
