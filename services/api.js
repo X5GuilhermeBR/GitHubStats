@@ -13,23 +13,15 @@ export const api = axios.create({
 })
 
 export const searchUsersGithub = async (username) => {
-    console.log(authStr)
-    return await api.get(
-        `/search/users?q=${username}&type=Users&per_page=100`,
-        { headers: { Authorization: authStr } }
-    )
+    return await api.get(`/search/users?q=${username}&type=Users&per_page=100`)
 }
 
 export const getUserInformations = async (username) => {
-    return await api.get(`/users/${username}`, {
-        headers: { Authorization: authStr },
-    })
+    return await api.get(`/users/${username}`)
 }
 
 export const getUserStars = async (username) => {
-    return await api.get(`/users/${username}/starred?per_page=100`, {
-        headers: { Authorization: authStr },
-    })
+    return await api.get(`/users/${username}/starred?per_page=100`)
 }
 
 export const setLocalStorageUsersItems = async (items) => {
