@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function About() {
+const About = () => {
     return (
-        <Container>
-            <Text>Test</Text>
-        </Container>
+        <div>
+            <h2>Test</h2>
+        </div>
     )
 }
+
+export default About
