@@ -1,10 +1,5 @@
 import styled from 'styled-components'
 
-const Container = styled.section``
+export const Container = styled.section``
 
-const Text = styled.p``
-
-export default {
-    Container,
-    Text,
-}
+export const Text = styled.p``
