@@ -1,12 +1,20 @@
 import React from 'react'
-import { Menu, Button } from './styles'
+import { Menu, Button, Logo } from './styles'
 
 const NavBar = () => {
+  const LogoPNG = require('../../public/images/logo_side.png')
   return (
     <Menu>
       <ul>
         <li>
-          <img src={'./../../public/images/logo.png'} alt="Github Stats"/>
+          <a href="/">
+            <Logo
+              src={LogoPNG}
+              alt="Github Stats"
+            />
+          </a>
+
+          <img />
         </li>
 
         <li>

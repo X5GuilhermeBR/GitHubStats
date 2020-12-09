@@ -3,7 +3,7 @@ import { Button as NewButton } from '@material-ui/core'
 
 export const Menu = styled.div`
     margin: 30px 0 30px 0;
-    
+
     ul {
         font-size: 16px;
         list-style-type: none;
@@ -40,4 +40,8 @@ export const Button = styled(NewButton)`
             background-color: var(--hover);
         }
     }
+`
+
+export const Logo = styled.img`
+  width: 150px;
 `
