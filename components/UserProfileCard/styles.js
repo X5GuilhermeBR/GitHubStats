@@ -139,6 +139,22 @@ const IconBlock = styled.div`
   }
 `
 
+const Link = styled.a`
+  &:hover {
+    svg {
+      fill: var(--hover);
+    }
+  }
+
+  &.statisc {
+    &:hover {
+      svg {
+        fill: var(--hover-red);
+      }
+    }
+  }
+`
+
 export {
   Container,
   Card,
@@ -151,4 +167,5 @@ export {
   Repo,
   Stars,
   IconBlock,
+  Link,
 }

@@ -1,156 +1,170 @@
 import React, { useState, useEffect } from 'react'
 import {
-    FaHeart,
-    FaFolder,
-    FaStar,
-    FaGithubSquare,
-    FaPoll,
+  FaHeart,
+  FaFolder,
+  FaStar,
+  FaGithubSquare,
+  FaPoll,
 } from 'react-icons/fa'
 
-import { getUserInformations, getUserStars } from '../../services/api'
+import {
+  getUserInformations,
+  getUserStars,
+} from '../../services/api'
 
 import {
-    Container,
-    Card,
-    Image,
-    UserInformation,
-    Title,
-    Text,
-    Stats,
-    Followers,
-    Repo,
-    Stars,
-    IconBlock,
+  Container,
+  Card,
+  Image,
+  UserInformation,
+  Title,
+  Text,
+  Stats,
+  Followers,
+  Repo,
+  Stars,
+  IconBlock,
+  Link,
 } from './styles'
 
 export default function UserProfileCard({ ...props }) {
-    const [name, setName] = useState('')
-    const [username, setUsername] = useState('')
-    const [photo, setPhoto] = useState('')
-    const [followers, setFollowers] = useState('')
-    const [repositories, setRepositories] = useState('')
-    const [stars, setStars] = useState('')
-    const [auth, setAuth] = useState(false)
-    const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
+  const [name, setName] = useState('')
+  const [username, setUsername] = useState('')
+  const [photo, setPhoto] = useState('')
+  const [followers, setFollowers] = useState('')
+  const [repositories, setRepositories] = useState('')
+  const [stars, setStars] = useState('')
+  const [auth, setAuth] = useState(false)
+  const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
 
-    const {
-        login,
-        titleColor,
-        userColor,
-        statsColor,
-        cardBackground,
-        cardBoxShadow,
-        cardDisplay,
-        imageBorderRadius,
-        statsMargin,
-        statsDisplay,
-        iconColor,
-        iconBlock,
-    } = props
+  const {
+    login,
+    titleColor,
+    userColor,
+    statsColor,
+    cardBackground,
+    cardBoxShadow,
+    cardDisplay,
+    imageBorderRadius,
+    statsMargin,
+    statsDisplay,
+    iconColor,
+    iconBlock,
+  } = props
 
-    useEffect(() => {
-        setUsername(login)
-    }, [])
+  useEffect(() => {
+    setUsername(login)
+  }, [])
 
-    useEffect(() => {
-        if (username) {
-            const authStr = 'Bearer '.concat(userToken)
-            setAuth(authStr)
-            async function searchUserInformations() {
-                const response = await getUserInformations({
-                    username,
-                    authStr,
-                })
-                const {
-                    name,
-                    avatar_url,
-                    followers: followersQty,
-                    public_repos: reposQty,
-                } = response.data
+  useEffect(() => {
+    if (username) {
+      const authStr = 'Bearer '.concat(userToken)
+      setAuth(authStr)
 
-                setName(name)
-                setPhoto(avatar_url)
-                if (followersQty > 1) {
-                    setFollowers(`${followersQty} seguidores`)
-                } else {
-                    setFollowers(`${followersQty} seguidor`)
-                }
-                if (reposQty > 1) {
-                    setRepositories(`${reposQty} repositórios`)
-                } else {
-                    setRepositories(`${reposQty} repositório`)
-                }
-            }
+      async function searchUserInformations() {
+        const response = await getUserInformations({
+          username,
+          authStr,
+        })
+        const {
+          name,
+          avatar_url,
+          followers: followersQty,
+          public_repos: reposQty,
+        } = response.data
 
-            searchUserInformations()
-
-            async function searchUserStars() {
-                const { data } = await getUserStars({ username, authStr })
-                const length = data.length
-
-                if (length > 1) {
-                    setStars(`${length} stars`)
-                } else {
-                    setStars(`${length} star`)
-                }
-            }
-
-            searchUserStars()
+        setName(name)
+        setPhoto(avatar_url)
+        if (followersQty > 1) {
+          setFollowers(`${followersQty} seguidores`)
+        } else {
+          setFollowers(`${followersQty} seguidor`)
         }
-    }, [username])
+        if (reposQty > 1) {
+          setRepositories(`${reposQty} repositórios`)
+        } else {
+          setRepositories(`${reposQty} repositório`)
+        }
+      }
 
-    return (
-        <Container>
-            {!!username && (
-                <Card
-                    background={cardBackground}
-                    boxShadow={cardBoxShadow}
-                    cardDisplay={cardDisplay}
-                >
-                    <Image
-                        src={photo}
-                        alt={`Imagem do usuário ${name} ${username}`}
-                        borderRadius={imageBorderRadius}
-                    />
+      searchUserInformations()
 
-                    <UserInformation>
-                        <Title titleColor={titleColor}>{name}</Title>
-                        <Text titleColor={userColor}>@{username}</Text>
+      async function searchUserStars() {
+        const { data } = await getUserStars({
+          username,
+          authStr,
+        })
+        const length = data.length
 
-                        <Stats statsDisplay={statsDisplay}>
-                            <Followers
-                                statsMargin={statsMargin}
-                                statsColor={statsColor}
-                            >
-                                <FaHeart size={24} color={iconColor} />
-                                {followers}
-                            </Followers>
+        if (length > 1) {
+          setStars(`${length} stars`)
+        } else {
+          setStars(`${length} star`)
+        }
+      }
 
-                            <Repo
-                                statsMargin={statsMargin}
-                                statsColor={statsColor}
-                            >
-                                <FaFolder size={24} color={iconColor} />
-                                {repositories}
-                            </Repo>
+      searchUserStars()
+    }
+  }, [username])
 
-                            <Stars
-                                statsMargin={statsMargin}
-                                statsColor={statsColor}
-                            >
-                                <FaStar size={24} color={iconColor} />
-                                {stars}
-                            </Stars>
-                        </Stats>
-                    </UserInformation>
+  return (
+    <Container>
+      {!!username && (
+        <Card
+          background={cardBackground}
+          boxShadow={cardBoxShadow}
+          cardDisplay={cardDisplay}
+        >
+          <Image
+            src={photo}
+            alt={`Imagem do usuário ${name} ${username}`}
+            borderRadius={imageBorderRadius}
+          />
 
-                    <IconBlock show={iconBlock}>
-                        <FaGithubSquare size={40} color="var(--icon)" />
+          <UserInformation>
+            <Title titleColor={titleColor}>{name}</Title>
+            <Text titleColor={userColor}>@{username}</Text>
 
-                        <FaPoll size={40} color="var(--icon-search)" />
-                    </IconBlock>
-                </Card>
-            )}
-        </Container>
-    )
+            <Stats statsDisplay={statsDisplay}>
+              <Followers
+                statsMargin={statsMargin}
+                statsColor={statsColor}
+              >
+                <FaHeart size={24} color={iconColor} />
+                {followers}
+              </Followers>
+
+              <Repo
+                statsMargin={statsMargin}
+                statsColor={statsColor}
+              >
+                <FaFolder size={24} color={iconColor} />
+                {repositories}
+              </Repo>
+
+              <Stars
+                statsMargin={statsMargin}
+                statsColor={statsColor}
+              >
+                <FaStar size={24} color={iconColor} />
+                {stars}
+              </Stars>
+            </Stats>
+          </UserInformation>
+
+          <IconBlock show={iconBlock}>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_GITHUB_URL}/${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithubSquare size={40} color="var(--icon)" />
+            </Link>
+
+            <FaPoll size={40} color="var(--icon-search)" />
+          </IconBlock>
+        </Card>
+      )}
+    </Container>
+  )
 }
