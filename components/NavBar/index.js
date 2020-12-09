@@ -6,7 +6,6 @@ const NavBar = () => {
         <Menu>
             <ul>
                 <li>
-                    <a>GitHub Stats</a>
                     <img src={'./../../public/images/logo.png'} alt="Github Stats"/>
                 </li>
                 
