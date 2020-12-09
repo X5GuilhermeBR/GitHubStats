@@ -31,7 +31,6 @@ export const Menu = styled.div`
 export const Button = styled(NewButton)`
     &.navButton {
         padding: 4px 8px;
-        margin-right: 20px;
         font-size: 16px;
         color: white;
         text-transform: none;

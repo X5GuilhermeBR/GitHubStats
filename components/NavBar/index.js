@@ -1,8 +1,8 @@
 import React from 'react'
 import { Menu, Button, Logo } from './styles'
+import LogoPNG from '../../public/images/logo_side.png'
 
 const NavBar = () => {
-  const LogoPNG = require('../../public/images/logo_side.png')
   return (
     <Menu>
       <ul>
