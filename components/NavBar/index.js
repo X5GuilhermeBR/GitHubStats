@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu, Button, Logo } from './styles'
-import LogoPNG from '../../public/images/logo_side.png'
+import LogoSide from '../../public/images/logo_side.png'
 
 const NavBar = () => {
   return (
@@ -9,7 +9,7 @@ const NavBar = () => {
         <li>
           <a href="/">
             <Logo
-              src={LogoPNG}
+              src={LogoSide}
               alt="Github Stats"
             />
           </a>
