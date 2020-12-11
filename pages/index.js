@@ -57,6 +57,10 @@ const Home = () => {
       const { data } = await searchUsersGithub({ username, authStr })
       const { items } = data
 
+      if (items.length < 1) {
+        setError('Nenhum usuário encontrado.')
+      }
+
       setProfiles(items)
       setLocalStorageUsersItems(items)
 
