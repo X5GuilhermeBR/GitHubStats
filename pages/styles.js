@@ -6,4 +6,12 @@ const Main = styled(Container)`
   z-index: 1;
 `
 
-export default Main
+const ErrorMessage = styled.div`
+  padding: 10px 0;
+  color: var(--white);
+`
+
+export {
+  Main,
+  ErrorMessage,
+}
