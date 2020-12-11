@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 import HeadHtml from '../components/Head/index'
 import NavBar from '../components/NavBar/index'
@@ -20,9 +21,12 @@ const Home = () => {
   const [username, setUsername] = useState(false)
   const [profiles, setProfiles] = useState([])
   const [loading, setLoading] = useState(false)
+  const [searchLoading, setSearchLoading] = useState(false)
   const [auth, setAuth] = useState(false)
   const [userToken] = useState(process.env.NEXT_PUBLIC_TOKEN_GIT)
   const [error, setError] = useState('')
+
+  const loadingGif = '/images/loading-stats.gif'
 
   useEffect(() => {
     getLocalStorageUsersItems().then(function (items) {
@@ -45,6 +49,8 @@ const Home = () => {
     if (!username) {
       setError('Preencha o campo de pesquisa.')
     } else {
+      setSearchLoading(true)
+
       const authStr = 'Bearer '.concat(userToken)
       setAuth(authStr)
 
@@ -56,6 +62,7 @@ const Home = () => {
 
       if (items) {
         setLoading(true)
+        setSearchLoading(false)
       }
     }
   }
@@ -78,7 +85,15 @@ const Home = () => {
         </ErrorMessage>
       )}
 
-      {!!loading &&
+      {!!searchLoading ? (
+        <Image
+          src={loadingGif}
+          alt="Carregando informações"
+          width="65px"
+          height="65px"
+        />
+      ) : (
+        !!loading &&
         !!profiles &&
           profiles.map((item) => (
             <UserProfileCard
@@ -97,7 +112,7 @@ const Home = () => {
             />
           )
         )
-      }
+      )}
     </Main>
   )
 }
