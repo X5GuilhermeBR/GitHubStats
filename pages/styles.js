@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 
-export const Main = styled(Container)`
+const Main = styled(Container)`
   position: relative;
   z-index: 1;
 `
-export const Center = styled.div`
+
+const Center = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -24,3 +25,14 @@ export const Center = styled.div`
     font-size: 22px;
   }
 `
+
+const ErrorMessage = styled.div`
+  padding: 10px 0;
+  color: var(--white);
+`
+
+export {
+  Main,
+  Center,
+  ErrorMessage,
+}
