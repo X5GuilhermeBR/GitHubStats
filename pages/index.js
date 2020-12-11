@@ -6,6 +6,8 @@ import NavBar from '../components/NavBar/index'
 import SearchBar from '../components/SearchBar/index'
 import UserProfileCard from '../components/UserProfileCard'
 
+import Logo from '../public/images/logo.png'
+
 import {
   searchUsersGithub,
   setLocalStorageUsersItems,
@@ -14,6 +16,7 @@ import {
 
 import {
   Main,
+  Center,
   ErrorMessage,
 } from './styles'
 
@@ -76,6 +79,11 @@ const Home = () => {
       <HeadHtml />
 
       <NavBar />
+      
+      <Center>
+        <img src={Logo} alt="Github Stats Logo"></img>
+        <p>Busque por um usuário e veja seus números do Github</p>
+      </Center>
 
       <SearchBar
         handleClick={(evt) => searchUser(evt, username)}
