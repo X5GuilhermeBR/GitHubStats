@@ -9,22 +9,21 @@ export const Menu = styled.div`
         list-style-type: none;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         overflow: hidden;
     }
 
     li {
-        float: left;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
     }
 
     li a {
-        padding: 14px 16px;
         color: white;
         text-align: center;
         display: block;
-
-        &:hover {
-            background-color: var(--hover);
-        }
     }
 `
 
