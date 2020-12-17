@@ -13,7 +13,7 @@ import {
     getLocalStorageUsersItems,
 } from '../services/api'
 
-import {Main, Center} from './styles'
+import { Main, Center } from '../styles/styles'
 
 const Home = () => {
     const [username, setUsername] = useState(false)
@@ -60,8 +60,8 @@ const Home = () => {
             <NavBar />
 
             <Center>
-              <img src={Logo} alt="Github Stats Logo"></img>
-              <p>Busque por um usuário e veja seus números do Github</p>
+                <img src={Logo} alt="Github Stats Logo"></img>
+                <p>Busque por um usuário e veja seus números do Github</p>
             </Center>
 
             <SearchBar
