@@ -14,7 +14,7 @@ export const Center = styled.div`
   padding-bottom: 30px;
 
   img {
-    width: 200px;
+    width: 150px;
   }
 
   p {
@@ -23,4 +23,52 @@ export const Center = styled.div`
     text-align: center;
     font-size: 22px;
   }
+`
+
+export const InfoCard = styled.div`
+  width: 600px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(174, 174, 174, .4);
+  border-radius: 12px;
+  overflow: hidden;
+
+  .image {
+    height: 100%;
+  }
+
+  .info-div {
+    height: 100%;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .name, .description {
+    color: #FFF;
+  }
+
+  .work, .local, .links a{
+    color: #9B9B9B;
+  }
+
+  .local-info {
+  }
+
+  .local-info div{
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .local-info div .icon {
+    margin-right: 5px;
+  }
+
+  .links a {
+    text-decoration: none;
+  }
+
 `

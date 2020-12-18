@@ -18,7 +18,7 @@ const NavBar = () => {
         </li>
 
         <li>
-          <Button className="navButton">Sobre</Button>
+          <Button href="/about" className="navButton">Sobre</Button>
         </li>
       </ul>
     </Menu>
