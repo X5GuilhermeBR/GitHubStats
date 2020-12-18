@@ -1,13 +1,22 @@
 import styled from 'styled-components'
 
 export const Card = styled.div`
-  width: 560px;
-  height: 220px;
+  width: 500px;
+  height: 170px;
   display: flex;
   align-items: center;
   background-color: rgba(174, 174, 174, .4);
   border-radius: 12px;
   overflow: hidden;
+
+  .image-container {
+    min-width: 140px;
+    max-width: 140px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   .image {
     height: 100%;
@@ -15,7 +24,8 @@ export const Card = styled.div`
 
   .info-div {
     height: 100%;
-    padding: 22px;
+    width: 100%;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -26,14 +36,22 @@ export const Card = styled.div`
   }
 
   .name {
-    font-size: 24px
+    font-size: 20px
   }
 
   .work, .local, .links a{
     color: var(--tertiary);
+    font-size: 12px;
   }
 
-  .local-info {
+  .description {
+    font-size: 14px;
+    height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
 
   .local-info div{
@@ -47,7 +65,7 @@ export const Card = styled.div`
   }
 
   .links a {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 10px;
     text-decoration: none;
 

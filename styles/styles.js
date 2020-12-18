@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
+import Button from '@material-ui/core/Button'
 
 export const Main = styled(Container)`
   position: relative;
@@ -30,6 +31,34 @@ export const AboutPage = styled(Container)`
   z-index: 1;
 
   h1 {
-    color: #FFF;
+    color: #FFFFFF;
+  }
+
+  p {
+    color: #AEAEAE;
+  }
+`
+export const CardGroup = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .info-card {
+    margin: 16px 0;
+    flex-basis: 420px;
+  }
+`
+
+export const BackButton = styled(Button)`
+  &.back {
+    min-width: 60px;
+    padding: 4px 4px;
+    font-size: 36px;
+    color: white;
+    text-transform: none;
+
+    &:hover {
+      background-color: var(--hover);
+    }
   }
 `

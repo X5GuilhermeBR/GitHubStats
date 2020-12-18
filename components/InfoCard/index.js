@@ -1,21 +1,33 @@
 import React from 'react';
-import { FaBuilding, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaBuilding, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { Card } from './styles'
 
-const InfoCard = ({name="Nome", description="Descrição", image, work="Trabalho / Faculdade", local="Cidade", github, linkedin, instagram}) => {
+const InfoCard = ({
+  name="Nome",
+  description="Descrição",
+  image, work="Trabalho / Faculdade",
+  local="Cidade",
+  github,
+  linkedin,
+  instagram,
+  twitter
+}) => {
   return(
-    <Card>
-      <img
-        src={image}
-        alt={name}
-        className="image"
-      />
+    <Card className="info-card">
+      <div className="image-container">
+        <img
+          src={image}
+          alt={name}
+          className="image"
+        />
+      </div>
+
 
       <div className="info-div">
         <h2 className="name">{name}</h2>
-        <p className="description">
+        <div className="description">
           {description}
-        </p>
+        </div>
 
         <div className="local-info">
           <div className="work">
@@ -53,6 +65,15 @@ const InfoCard = ({name="Nome", description="Descrição", image, work="Trabalho
               target="_blank"
               rel="noopener noreferrer">
                 <FaInstagram />
+            </a>
+          )}
+
+          {twitter && (
+            <a
+              href={twitter}
+              target="_blank"
+              rel="noopener noreferrer">
+                <FaTwitter />
             </a>
           )}
         </div>
