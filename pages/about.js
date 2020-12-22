@@ -68,7 +68,7 @@ const About = () => {
           <div className="info">
             <h2>.:Cadê meu Café?:.</h2>
             <div className="discord">
-              <a href="https://discordapp.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/fbynQhcErx" target="_blank" rel="noopener noreferrer">
                 Faça parte da comunidade
               </a>
               <FaDiscord />
