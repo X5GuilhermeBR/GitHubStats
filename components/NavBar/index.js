@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu, Button, Logo } from './styles'
 import LogoSide from '../../public/images/logo_side.png'
 
-const NavBar = () => {
+const NavBar = ({button=true}) => {
   return (
     <Menu>
       <ul>
@@ -13,13 +13,14 @@ const NavBar = () => {
               alt="Github Stats"
             />
           </a>
-
-          <img />
         </li>
 
-        <li>
+        {button && (
+          <li>
           <Button href="/about" className="navButton">Sobre</Button>
         </li>
+        )}
+
       </ul>
     </Menu>
   )
